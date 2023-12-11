@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mathologists | Mathematics Tutoring Service</title>
+    <link rel="icon" href="../math_img/Asset 2.png" sizes="32x32" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* Reset */
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Typography */
+        html {
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.55;
+            color: rgb(60, 58, 71);
+        }
+
+        .contact-info {
+            background-color: black;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info ul {
+            list-style-type: none;
+            display: flex;
+            gap: 5rem;
+            margin-left: 30rem;
+            margin-top: 0.3rem;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: white;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .contact-info img {
+            width: 1.5rem;
+            margin-right: 0.75rem;
+            position: relative;
+            top: 0.3rem;
+        }
+
+        .logo-container img {
+            width: 9rem;
+            display: block;
+            padding: 10px 0;
+            margin-left: 85px;  /* Adjust logo margin */
+        }
+
+        .logo-container {
+            background-color: white;
+            flex-grow:1;    
+            display: flex;
+            align-items: center;
+        }
+
+
+        .header_options a {
+            text-decoration: none;
+            font-weight: 375;
+            color: black;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: color 0.3s, transform 0.3s, background-color 0.3s, border-bottom 0.3s, font-weight 0.3s;
+            position: relative;
+            font-size: 0.85rem;
+            padding: 10px 10px;
+        }
+
+        .header_options a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            right: 10px;
+            height: 2px;
+            background-color: black;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .header_options a:hover {
+            color: rgb(100, 98, 111);
+            background-color: rgba(100, 98, 111, 0.1);
+            transform: scale(1.05);
+            font-weight: 500;
+        }
+
+        .header_options a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .header_options {
+            flex-grow: 2;
+            padding: 10px 0;
+        }
+
+        .book-trial {
+            position: absolute;
+            right: 30px; /* Adjust as needed for spacing from the right */
+            top: 50%;
+            transform: translateY(-50%); /* To center vertically */
+        }
+
+        .book-trial a {
+            text-decoration: none;
+        }
+
+
+        .book-trial a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            right: 10px;
+            height: 2px;
+            background-color: white; /* Changed to white for visibility against gradient */
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .book-trial a:hover {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .book-trial a:hover::before {
+            transform: scaleX(1);
+        }
+
+
+        .header_options ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            gap: 0.65rem;
+            position: relative;
+            right: 3rem;
+        }
+
+        .learn {
+            display: flex;
+            align-items: center;
+            gap: 6rem;
+            padding-left: 5px;
+            padding-right: 30px;
+            background-color: #d9d9da;
+            position:relative;
+            gap: 3rem;  /* Reduced gap to create more room */
+            position: -webkit-sticky;  /* for Safari */
+            position: sticky;
+            top: 0;  /* Stick to the top */
+            z-index: 1000;  /* High z-index to ensure it remains on top of other elements */
+            background-color: white;  /* To ensure the header's content isn't transparent over other content */
+        }
+        
+
+        .book-trial {
+            position: absolute;
+            right: 30px; /* Adjust as needed for spacing from the right */
+            top: 50%;
+            transform: translateY(-50%); /* To center vertically */
+        }
+
+        .book-trial a {
+            background-image: linear-gradient(to right, #2ed573, #38b2ac);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: block;
+            height: 100%; /* To make sure it fills the entire parent div */
+            line-height: normal; /* To reset line-height so text is centered */
+        }
+
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            align-items: center;
+            gap: 10rem;
+            margin-left: 85px;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero_img img {
+            width: 27rem;
+            position: relative;
+            top: 3rem;
+            right: 5rem;
+        }
+
+        .intro_text {
+            font-weight: 400;
+            font-size: 1rem;
+            margin-bottom: 45px;
+            margin-top: 100px;
+        }
+
+        .hero_txt span {
+            transition: opacity 0.2s;
+        }
+
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 2rem;
+            line-height: 2.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .ending_text {
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .highlight {
+            color: #38d430;
+        }
+
+        .grades {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 2rem; 
+            padding-left: 85px;
+            padding-right: 85px;
+            transition: all 0.4s; /* smoothens out transitions */
+            padding-top: 12vh;
+        }
+
+        .grade_container {
+            text-align: center;
+            border: 2px solid black;
+            max-width: none; 
+            width: 100%; 
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            height: calc(150px + 2rem); 
+            background-color: black;
+            transition: transform 0.4s, box-shadow 0.4s; /* added transitions for the new hover effects */
+            opacity: 0; /* Initial opacity */
+            transform: translateY(-10%); /* Initial position */
+            transition: opacity 1s ease-in-out;  
+        }
+
+        .grade_container.in-view {
+            opacity: 1;  
+        }
+        
+        .in-view {
+            opacity: 1; /* Full visibility */
+            transform: translateY(0); /* Back to the original position */
+        }
+
+        h2 {
+            margin: 0; 
+            font-size: 4.5rem;
+            color: white;
+        }
+
+        /* Hover Effects and Gradients */
+
+        .grade_7:hover {
+            background-image: linear-gradient(45deg, #ffafbd, #ffc3a0); 
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .grade_8:hover {
+            background-image: linear-gradient(45deg, #cc2b5e, #753a88); 
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .grade_9:hover {
+            background-image: linear-gradient(45deg, #bdc3c7, #2c3e50); 
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .grade_10:hover {
+            background-image: linear-gradient(45deg, #02aab0, #00cdac); 
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .grade_11:hover {
+            background-image: linear-gradient(45deg, #4568dc, #b06ab3); 
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .grade_12:hover {
+            background-image: linear-gradient(45deg, #ff512f, #dd2476); 
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Add this CSS to style the button */
+        #backToTop {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it doesn't overlap other items */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #333; /* Dark background */
+            color: white; /* White text */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+            transition: background 0.3s; /* Smooth transition for background on hover */
+        }
+
+        #backToTop:hover {
+            background-color: #555; /* Add a darker background on hover */
+        }
+
+        .our-mathology img {
+            width: 35rem;
+            height: auto;
+        }
+
+        .our-mathology {
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem; /* Added a gap between the columns */
+        }
+
+        .our-mathology h2 {
+            color: black;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .our-mathology h3 {
+            color: black;
+            font-size: 1rem;
+        }
+
+        .our-mathology p {
+            margin-right: 5rem;
+            font-size: 15px;
+        }
+
+        .mathology-txt img {
+            position: relative;
+            left: 19.1rem;
+            width: 15rem;
+            top: 3.5rem;
+        }
+
+        .mathology-img img {
+            width: 30rem;   /* Adjusted width */
+            height: auto;  /* Adjusted height */
+        }
+
+        /* Initial styles for elements to be animated */
+        .our-mathology .mathology-img, .our-mathology .mathology-txt {
+            opacity: 0;
+            transform: translateY(50px); /* Initial position moved downwards */
+            transition: opacity 0.5s, transform 0.5s; /* Transition effects */
+        }
+
+        .the-mathologists {
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "header header"
+                "ei img"
+                "text img";
+            gap: 2rem;
+        }
+
+        .mathologists-img img {
+            width: 40rem; /* Increased the width */
+            margin-right: 2rem; /* Push it away from the right margin */
+        }
+
+        .header-txt h2 {
+            color: black;
+            text-align: center;
+            font-size: 2.75rem;
+            margin-top: 5rem;
+        }
+
+        .header-txt p {
+            color: black;
+            text-align: center;
+            letter-spacing: 0.75px;
+        }
+
+        .it {
+            font-style: italic;
+            margin-bottom: 1rem;
+            margin-top: 0.65rem;
+        }
+
+        .ei img {
+            width: 30rem;
+            margin-bottom: -2rem;
+        }
+
+        .mathologists-txts {
+            margin-left: 85px;
+        }
+
+        .header-txt {
+            grid-area: header;
+        }
+
+        .ei {
+            grid-area: ei;
+        }
+
+        .mathologists-txts {
+            grid-area: text;
+        }
+
+        .mathologists-img {
+            grid-area: img;
+        }
+
+        .mathologists-img img {
+            width: 32rem; /* Reduced the width from 40rem to 30rem */
+            margin-right: 2rem;
+            display: block; /* To center the image */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-text {
+            font-size: 0.9rem;
+        }
+
+        /* Fade-in effect default */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        /* Hover effect for the images */
+        .ei img, .mathologists-img img {
+            transition: transform 0.3s ease-out;
+        }
+
+        .ei img:hover, .mathologists-img img:hover {
+            transform: scale(1.05);  /* Scale the image up to 105% when hovered */
+        }
+
+        /* Style the dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style the dropdown content; initially hidden */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Style the dropdown links */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Show the dropdown content on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Optional: Style the dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 100px;
+            gap: 100px;
+            opacity: 0;
+            transition: opacity 1s ease-out;
+            margin-bottom: 7.5rem;
+        }
+
+        .resources-info h2 {
+            font-size: 2rem;
+            color: black;
+            margin-bottom: 3rem;
+            margin-top: 1.5rem;
+        }
+
+        .resources-info p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resources-info h3 {
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .resources-img img {
+            width: 35rem;
+        }
+
+        .resources-info button {
+            padding: 1rem 2.5rem;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            background: linear-gradient(to right, #38b2ac, #2ed573);
+            border: none;   /* Remove the default border */
+            cursor: pointer;  /* Change the cursor on hover */
+            transition: transform 0.2s; /* Adds a smooth transition effect when button is pressed */
+            border-radius: 0.3rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-top: 1rem;
+            border-bottom: 2px solid transparent; /* Setting a transparent bottom border */
+            transition: transform 0.2s, border-bottom 0.2s; /* Adding border-bottom to the transition property */
+            border-bottom: 2px solid #2ed573; /* Color of the underline effect */
+        }
+
+        .resources-info button:hover {
+            transform: scale(1.05); /* Enlarges the button slightly when hovered */
+        }
+
+        .green-line {
+            background: linear-gradient(to right, #38b2ac, #2ed573);
+            height: 7.5px;
+            border-radius: 1rem;
+            margin-top: -1.75rem;
+            margin-bottom: 1.25rem;
+            width: 0%; /* initially, it's set to zero */
+            transition: width 1s ease-in-out;
+            overflow: hidden;
+            position: relative;
+            left: 100%; /* Push it all the way to the right initially */
+        }
+
+        .all_imgs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns, each taking up half the width */
+            grid-template-rows: repeat(2, 1fr); /* 2 rows, each taking up half the height */
+            column-gap: 40px; /* Gap between columns */
+        }
+
+        .img_1 img {
+            width: 610px;
+            height: 600px;
+            border-radius: 0rem 1rem 1rem 0rem;
+            grid-area: 1 / 1 / 2 / 2; /* Position top-left */
+        }
+
+        .img_2 img {
+            width: 610px;
+            height: 275px;
+            border-radius: 0rem 1rem 1rem 0rem;
+            grid-area: 2 / 1 / 3 / 2; /* Position bottom-left */
+            margin-top: 30px;
+        }
+
+        .img_3 img {
+            width: 610px;
+            height: 275px;
+            border-radius: 1rem 0rem 0rem 1rem;
+            grid-area: 1 / 2 / 2 / 3; /* Position top-right */
+            position: relative; 
+        }
+
+        .img_4 img {
+            width: 610px;
+            height: 600px;
+            border-radius: 1rem 0rem 0rem 1rem;
+            grid-area: 2 / 2 / 3 / 3; /* Position bottom-right */
+            position: relative;
+            bottom: 300px;
+        }
+
+        .img_1, .img_2 {
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+
+        .img_3, .img_4 {
+            transform: translateX(100%);
+            transition: transform 0.5s;
+        }
+
+        .visible {
+            transform: translateX(0);
+        }
+
+        .all_imgs {
+            overflow-x: hidden;
+        }
+
+        .testimonies {
+
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+                margin: -225px auto 0 auto;
+                padding: 4px 0; /* Padding at the top and bottom */ 
+
+            }
+
+            .testimonies-slider-wrapper {
+                overflow: hidden;
+                width: calc(2.5 * 40% - 14rem);
+                height: auto;  /* Allowing the wrapper to adjust its height according to its content */
+            }
+
+            .testimonies-slider {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+                padding-left: 2.5rem; /* Padding to ensure left border of first testimony is visible */
+            }
+
+            .testimony_tab {
+                flex: 0 0 40%;
+                border: 2px solid white;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                margin-right: 2.5rem;
+                padding: 2rem;
+                height: auto; /* Allowing the tab to adjust its height according to its content */
+                transition: transform 0.3s;
+                box-sizing: border-box; /* Ensures padding and border are included in the width & height */
+            }
+
+            .testimony_tab:last-child {
+                margin-right: 0; /* Ensuring the last testimony doesn't have an extra margin */
+            }
+
+            .testimony_tab:hover {
+                transform: scale(1.05);
+            }
+
+            .testimony_tab p {
+                font-size: 0.75rem;
+            }
+
+            .left-right img {
+                width: 2rem;
+            }
+
+            .left-right {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                padding: 1rem 0; /* Adjusting padding to make sure the borders are visible */
+            }
+
+            .left_arrow, .right_arrow {
+                margin: 0 10px;
+            }
+
+            .school_logos h3 {
+                font-size: 1.75rem;
+                text-align: center;
+            }
+
+            .school_logos img {
+                width: 70rem;
+                margin-top: 1rem;
+            }
+
+            .special-testimony-1 p {
+                font-size: 1.5rem;
+            }
+
+
+            .special-testimony-1 h3 {
+                font-size: 1.5rem;
+            }
+
+            .special-testimony-1 h4 {
+                font-size: 1rem;
+                font-style: italic;
+                font-weight: 500;
+            }
+
+            .special-testimony-2 h3 {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+
+            }
+
+            .special-testimony-container div {
+                display: inline-block;
+            }
+
+            .container {
+                padding: 4rem 4rem 4rem 85px;
+                background: linear-gradient(to bottom, #e3f9e2, white);
+            }
+
+            .special-testimony-2 {
+                color: white;
+                background-color: black;
+                position: relative;
+                bottom: 4rem;
+                padding: 4rem 5rem 12.5rem 5rem;
+                border-radius: 0rem 0.5rem 1rem 0rem;
+                
+            }
+
+            .special-testimony-1 {
+                background-color: white;
+                position: relative;
+                left: 0.3rem;
+                padding: 2.25rem 5rem 8.5rem 3rem;
+                border-radius: 1rem 0rem 0rem 1rem;
+            }
+
+
+            .form-container div {
+                display: inline-block;
+            }
+
+            .form-container-img img {
+                width: 32.5rem;
+            }
+
+            .form-container-form input {
+                display: block;
+                margin-bottom: 2rem;
+                padding: 1rem 1rem 0.5rem 1rem;
+                border: none;
+                border-bottom: 2px solid #185b15;
+                font-family: 'Inter', sans-serif;
+                background-color: black;
+                color: white;
+                width: 100%;
+            }
+
+            .form-container-form h2 {
+                color: white;
+                font-size: 2.25rem;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            .form-container-form p {
+                font-size: 0.85rem;
+                margin-bottom: 2.5rem;
+                margin-top: 1rem;
+                color: white;
+            }
+
+            .form-container-form ::placeholder {
+                color: white;
+            }
+
+            .green-text {
+                color: #38d430;
+                text-transform: none;
+            }
+
+            .form-container-form {
+                margin-left: 2rem;
+            }
+
+            .form-container-form {
+                background-color: black;
+                padding: 2rem 3rem 1rem 3rem;
+                border-radius: 0.35rem 0.35rem 0.35rem 0.35rem;
+            }
+
+            .form-container {
+                margin-bottom: 5rem;
+            }
+
+        /* Hover effect for input */
+        .form-container-form input:hover {
+            border-bottom-color: #38d430; /* Using green color from your theme */
+            transform: translateY(-3px); /* Slight upwards shift */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Adding a subtle shadow */
+        }
+
+        /* Focus effect for input */
+        .form-container-form input:focus {
+            outline: none; /* Removing the white outline */
+            border-bottom-color: #38d430; /* Using green color from your theme */
+            transition: border-bottom-color 0.3s ease-in;
+        }
+
+        /* Animated Placeholder fade out */
+        .form-container-form input:focus::placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+
+        /* Background Glow Effect on Hover */
+        .form-container-form input:hover {
+            background: rgba(255, 255, 255, 0.05); /* Subtle white glow */
+        }
+
+        /* Enhanced styles for the submit button */
+        .submit-button {
+            background: linear-gradient(to right, #2ed573, #38b2ac);
+            color: white;
+            border: none;
+            border-radius: 0.35rem;
+            padding: 1rem 2rem;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            display: block;
+            width: 100%; /* Stretching it to the div */
+            transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        /* Hover effect for the submit button */
+        .submit-button:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Enhanced shadow effect */
+            transform: scale(1.02); /* Slightly increasing the size for emphasis */
+        }
+
+        /* Active state for the submit button */
+        .submit-button:active {
+            transform: scale(0.98); /* Slightly decreasing the size for a button press effect */
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15); /* Subtle shadow when active */
+        }
+
+        /* Extra: Adding a subtle shine effect on hover */
+        .submit-button:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -5%;
+            left: -105%;
+            width: 30%;
+            height: 110%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: rotate(35deg);
+            pointer-events: none; /* So it doesn't interfere with button's functionality */
+            opacity: 0;
+            transition: opacity 0.3s, left 0.3s;
+        }
+
+        .submit-button:hover:before {
+            left: 105%;
+            opacity: 0.4;
+        }
+
+        .faq_header h2 {
+            color: black;
+            font-size: 2.5rem;
+            margin-left: 85px;
+            margin-bottom: 1.5rem;
+            margin-top: 5.5rem;
+        }
+
+        .faq_green {
+            color: #38d430;
+        }
+
+        .faq-checkbox {
+            display: none;
+        }
+
+        .faq-label {
+            cursor: pointer;
+            display: inline-block;
+            width: 85vw;
+            margin-bottom: 0.1rem;
+            margin-left: 85px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            position: relative;
+            box-sizing: border-box;
+            font-weight: 700;
+            padding: 0.8rem;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-label:hover {
+            background-color: #e6e6e6;
+        }
+
+        .faq-label:after {
+            content: "+";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: black;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-label:hover:after {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .faq-checkbox:checked + .faq-label:after {
+            content: "-";
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease;
+            margin-left: 85px;
+            width: 85vw;
+            background-color: #f4f4f4;
+            border-top: none;
+            padding: 0.8rem;
+            color: black;
+            opacity: 0;
+        }
+
+        .faq-checkbox:checked + .faq-label + .faq-answer {
+            transition: max-height 0.6s cubic-bezier(1, 0, 1, 1), opacity 0.4s ease;
+            max-height: 1000px;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .faq-checkbox:not(:checked) + .faq-label + .faq-answer {
+            max-height: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .faq_img img {
+            width: 30rem;
+            position: relative;
+            top: 1rem;
+            left: 5rem;
+        }
+
+        .faq {
+            overflow: hidden;
+        }
+        
+        .summary_container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .about-us-img img {
+            width: 9rem;
+        }
+
+        .summary p {
+            font-size: 0.75rem;
+        }
+
+        .summary h3 {
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .summary a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Additional styling for visualization */
+        .summary_container > div {
+    
+            padding: 1rem; /* This gives some padding inside each column */
+            box-sizing: border-box; /* This ensures the border is within the column width */
+        }
+
+        #about-us {
+            position: relative; /* Set the parent container to relative */
+            top: 1.5rem;
+            left: 85px;
+            margin-right: 5rem;
+
+        }
+
+        .about-us-img {
+            position: absolute; /* Position the image absolutely within the relative container */
+            top: 0;             /* Position the image at the top of the container */
+            left: 0;            /* Align the image to the left */
+            z-index: 2;         /* Place the image above other elements */
+        }
+
+        .about-us-img img {
+            width: 9rem;
+        }
+
+        .about-us-info {
+            z-index: 1;         /* Place the text below the image */
+        }
+
+        .about-us-info p {
+            margin-bottom: 1rem;
+            position: relative;
+            top: 2rem;
+            right: 1rem
+        }
+
+        .classes-info p, h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .classes-info {
+            position: relative;
+            bottom: 1.5rem;
+            margin-right: 1.5rem;
+        }
+
+        .contacts p, h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .contacts {
+            position: relative;
+            bottom: 3rem;
+            margin-right: 1.5rem;
+        }
+
+        .opening-hours p, h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .space-left {
+            margin-left: 2rem;
+        }   
+
+        .opening-hours {
+            position: relative;
+            bottom: 7.5rem;
+        }
+
+        .summary {
+            margin-bottom: 4rem;
+        }
+
+        hr {
+            width: calc(100% - 170px); /* Reduce total width by 170px (85px from each side) */
+            margin: 0 auto;            /* Center the <hr> */
+            border: none;              /* Remove the default border */
+            border-top: 1px solid gray; /* Add a top border to mimic <hr> appearance */
+        }
+
+        .footer {
+            padding: 1rem 85px; /* Add padding of 85px on the left and right sides */
+        }
+
+        .footer p {
+            text-align: left;  /* Align text to the left */
+            display: inline-block;
+            gap: 1rem;
+            margin: 0.5rem 0;  /* Some margin for spacing */
+            font-size: 0.75rem;
+            margin-right: 7.5rem;
+        }
+
+
+        .footer a {
+            margin: 0 0.5rem;  /* Add some space between links */
+            color: inherit;    /* Use the inherited color (or you can set a specific color if you prefer) */
+        }
+        
+        </style>
+
+</head>
+<body>
+
+    <div class="opening">
+        <nav class="contact-info">
+            <ul>
+                <li><a href="tel:0424788909"><img src="../math_img/download.png" alt="Phone Icon">0424 788 909</a></li>
+                <li><a href="https://goo.gl/maps/aQo57dyXhDHCGs6n6"><img src="../math_img/download (1).png" alt="Location Icon">302/110 Church St, 
+                    PARRAMATTA 2150</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <header class="learn">
+
+        <div class="logo-container">
+            <a href="index.html"><img src="../math_img/Asset 2.png" alt="Company Logo"></a>
+        </div>
+        
+            <nav class="header_options">
+                <ul>
+                    <li><a href="#about-us">Our Story</a></li>
+                    <li><a href="#our-mathology">Our Mathology</a></li>
+                    <li><a href="#our-mathologists">Tutors</a></li>
+                    <li class="dropdown">
+                        <a href="#classes">Classes</a>
+                        <div class="dropdown-content">
+                            <a href="#grade7">Grade 7</a>
+                            <a href="#grade8">Grade 8</a>
+                            <a href="#grade9">Grade 9</a>
+                            <a href="#grade10">Grade 10</a>
+                            <a href="#grade11">Grade 11</a>
+                            <a href="#grade12">Grade 12</a>
+                        </div>
+                    </li>                    
+                    <li><a href="#timetable">Timetable</a></li>
+                    <li><a href="#price">Price</a></li>
+                </ul>
+            </nav>
+
+            <div class="book-trial">
+                <a href="#booktrial">BOOK TRIAL</a>
+            </div>
+    </header>
+
+    <section id="grades" class="hero">
+        <div class="hero_txt">
+            <p class="intro_text">#mathstutoring</p>
+            <h1>Unlock your inner <span class="highlight">MATH</span>  <br> genius and skyrocket <br> your results.</h1>
+            <p class="ending_text">Maths tutoring for Years 10, 11 and 12 - NSW NESA Syllabus</p>
+        </div>
+
+        <div class="hero_img">
+            <img src="../math_img/golden-ratio-30822.png" alt="">          
+        </div>
+    </section>
+
+    <section id="classes" class="grades">
+        <div class="grade_container grade_7">
+            <h2>7</h2>
+        </div>
+    
+        <div class="grade_container grade_8">
+            <h2>8</h2>
+        </div>
+    
+        <div class="grade_container grade_9">
+            <h2>9</h2>
+        </div>
+    
+        <div class="grade_container grade_10">
+            <h2>10</h2>
+        </div>
+    
+        <div class="grade_container grade_11">
+            <h2>11</h2>
+        </div>
+    
+        <div class="grade_container grade_12">
+            <h2>12</h2>
+        </div>
+    </section>
+
+    <section id="our-mathology" class="our-mathology">
+
+        
+        <div class="mathology-img">
+            <img src="../math_img/Screenshot 2023-09-01 195851.png" alt="">
+        </div>
+
+        <div class="mathology-txt">
+
+            <img src="../math_img/Screenshot 2023-09-01 195917.png" alt="">
+            <h2>
+                Our Mathology
+            </h2>
+
+            <h3>
+                Farewell to the days of feeling overwhelmed in Maths. <br> Say hello to a clarity and understanding.
+            </h3>
+
+            <br>
+
+            <p>
+                How are we able to consistently help our students achieve remarkable <br> results? Because we don't teach 
+                like others do. 
+            </p>
+
+            <br>
+
+            <p>
+                Our education is founded in the proven <strong>socratic method</strong>, involving a <br> consistent dialogue between the tutor 
+                and student. This allows for an <br> active engagement during class, giving our students the platform to <br> understand mathematical 
+                concepts like never before.
+            </p>
+        </div>
+
+    </section>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <section id="our-mathologists" class="the-mathologists">
+
+        <header class="header-txt">
+            <h2>The Mathologists</h2>
+            <p><strong>Where teaching meets passion, and tutors become legends.</strong></p>
+        </header>
+    
+        <!-- Add 'fade-in' class for the fade effect -->
+        <div class="ei fade-in">
+            <img class="img-fade-in" src="../math_img/Screenshot 2023-09-01 214121.png" alt="">
+        </div>
+    
+        <!-- Add 'fade-in' class for the fade effect -->
+        <div class="mathologists-txts fade-in">
+            <p class="it"><strong><em>We are beacons of excellence.</em></strong></p>
+    
+            <p class="info-text"> Having aced the HSC in Maths, our <br> tutors are not just students of the <br> subject but masters, bearing the <br>
+            distinguished honor of state <br> rankings.</p>
+    
+            <br>
+    
+            <p class="info-text"> But at The Mathologists, prowess <br> in the subject is merely the <br> beginning. Just as the famed <br> alchemists turned lead 
+                into gold, 
+            <br> our tutors have an innate ability to <br> distill even the most intricate of <br> mathematical concepts into <br> digestible, bite-sized wisdom. <br>
+            Their teaching style is imbued with <br> an infectious passion and an <br> unparalleled ability to engage.</p>
+        </div>
+    
+        <!-- Add 'fade-in' class for the fade effect -->
+        <div class="mathologists-img fade-in">
+            <img class="img-fade-in" src="../math_img/Screenshot 2023-09-01 213036.png" alt="">
+        </div>
+    
+    </section>
+
+    <section class="resources">
+
+    <div class="resources-img">
+        <img src="../math_img/Screenshot 2023-09-02 135011.png" alt="">
+    </div>
+
+    <div class="resources-info">
+
+        <h2>
+            Exclusive resources
+        </h2>
+
+        <div class="green-line"></div>
+
+        <h3>
+            We care about the details. 
+        </h3>
+
+        <p>
+            Perfectly aligned to the NSW syllabus, our workbooks and <br> exams are designed to take students from beginning to end. <br>
+            From building robust foundations to conquering the trickiest application of mathematical ideas, we leave no stones <br> unturned.
+        </p>
+
+        <p> 
+            Our recourses are packed with detailed theory explanations <br> written by legendary mathematicians, and model worked <br> solutions 
+            that set the tone for the quality of state-ranking <br> students. 
+        </p>
+
+        <p> 
+            Just see yourself.
+        </p>
+
+        <a> <button>Claim Your Free Trial</button></a>
+    </div>
+    </section>
+    
+
+    <section class="green-imgs">
+        <div class="all_imgs">
+            <div class="img_1">
+                <img src="../math_img/upper-left.png" alt="">
+            </div>
+    
+            <div class="img_3">
+                <img src="../math_img/upper-right.png" alt="">
+            </div>
+
+            <div class="img_2">
+                <img src="../math_img/bottom-left.png" alt="">
+            </div>
+    
+            <div class="img_4">
+                <img src="../math_img/bottom-right.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonies">
+        <div class="testimonies-slider-wrapper">
+            <div class="testimonies-slider">
+                <div class="testimony_tab">
+                    <h4>
+                    Faustina Confucious
+                    </h4>
+    
+                <br>
+    
+                <p>
+                    Class of 2024 (Year 11)
+                </p>
+                
+                <p> OLCM, Parramatta</p>
+    
+                <br>
+    
+                <p> The Mathologists is the best maths tutoring <br> 
+                place I've ever had. All the tutors are young, <br> 
+                supportive, encouraging and non-judgemental <br>
+                which has helped me ask many questions <br>
+                without fear (p.s. they buy us free drinks) 😃😃. </p>
+    
+                <br>
+    
+                <p>
+                    The tutors make sure everyone understands the <br>
+                    topics very weel before moving on and they are <br>
+                    genuinely super friendly. They have helped me <br>
+                    towards improving my marks and better <br>
+                    understanding school content. This is my fav <br>
+                    tutoring place and I look forward to every <br>
+                    Tuesday to do Maths. 
+                </p>
+    
+                <br>
+    
+                <p>
+                    You Should join!!! ->
+                </p>
+    
+            </div>
+    
+    
+            <div class="testimony_tab">
+                <h4>
+                    Faustina Confucious
+                </h4>
+    
+                <br>
+    
+                <p>
+                    Class of 2024 (Year 11)
+                </p>
+                
+                <p> OLCM, Parramatta</p>
+    
+                <br>
+    
+                <p> The Mathologists is the best maths tutoring <br> 
+                place I've ever had. All the tutors are young, <br> 
+                supportive, encouraging and non-judgemental <br>
+                which has helped me ask many questions <br>
+                without fear (p.s. they buy us free drinks) 😃😃. </p>
+    
+                <br>
+    
+                <p>
+                    The tutors make sure everyone understands the <br>
+                    topics very weel before moving on and they are <br>
+                    genuinely super friendly. They have helped me <br>
+                    towards improving my marks and better <br>
+                    understanding school content. This is my fav <br>
+                    tutoring place and I look forward to every <br>
+                    Tuesday to do Maths. 
+                </p>
+    
+                <br>
+    
+                <p>
+                    You Should join!!! ->
+                </p>
+    
+            </div>
+    
+            <div class="testimony_tab">
+                <h4>
+                    Faustina Confucious
+                </h4>
+    
+                <br>
+    
+                <p>
+                    Class of 2024 (Year 11)
+                </p>
+                
+                <p> OLCM, Parramatta</p>
+    
+                <br>
+    
+                <p> The Mathologists is the best maths tutoring <br> 
+                place I've ever had. All the tutors are young, <br> 
+                supportive, encouraging and non-judgemental <br>
+                which has helped me ask many questions <br>
+                without fear (p.s. they buy us free drinks) 😃😃. </p>
+    
+                <br>
+    
+                <p>
+                    The tutors make sure everyone understands the <br>
+                    topics very weel before moving on and they are <br>
+                    genuinely super friendly. They have helped me <br>
+                    towards improving my marks and better <br>
+                    understanding school content. This is my fav <br>
+                    tutoring place and I look forward to every <br>
+                    Tuesday to do Maths. 
+                </p>
+    
+                <br>
+    
+                <p>
+                    You Should join!!! ->
+                </p>
+    
+            </div>
+    
+            <div class="testimony_tab">
+                <h4>
+                    Faustina Confucious
+                </h4>
+    
+                <br>
+    
+                <p>
+                    Class of 2024 (Year 11)
+                </p>
+                
+                <p> OLCM, Parramatta</p>
+    
+                <br>
+    
+                <p> The Mathologists is the best maths tutoring <br> 
+                place I've ever had. All the tutors are young, <br> 
+                supportive, encouraging and non-judgemental <br>
+                which has helped me ask many questions <br>
+                without fear (p.s. they buy us free drinks) 😃😃. </p>
+    
+                <br>
+    
+                <p>
+                    The tutors make sure everyone understands the <br>
+                    topics very weel before moving on and they are <br>
+                    genuinely super friendly. They have helped me <br>
+                    towards improving my marks and better <br>
+                    understanding school content. This is my fav <br>
+                    tutoring place and I look forward to every <br>
+                    Tuesday to do Maths. 
+                </p>
+    
+                <br>
+    
+                <p>
+                    You Should join!!! ->
+                </p>
+    
+            </div>
+    
+            <div class="testimony_tab">
+                <h4>
+                    Faustina Confucious
+                </h4>
+    
+                <br>
+    
+                <p>
+                    Class of 2024 (Year 11)
+                </p>
+                
+                <p> OLCM, Parramatta</p>
+    
+                <br>
+    
+                <p> The Mathologists is the best maths tutoring <br> 
+                place I've ever had. All the tutors are young, <br> 
+                supportive, encouraging and non-judgemental <br>
+                which has helped me ask many questions <br>
+                without fear (p.s. they buy us free drinks) 😃😃. </p>
+    
+                <br>
+    
+                <p>
+                    The tutors make sure everyone understands the <br>
+                    topics very weel before moving on and they are <br>
+                    genuinely super friendly. They have helped me <br>
+                    towards improving my marks and better <br>
+                    understanding school content. This is my fav <br>
+                    tutoring place and I look forward to every <br>
+                    Tuesday to do Maths. 
+                </p>
+    
+                <br>
+    
+                <p>
+                    You Should join!!! ->
+                </p>
+    
+            </div>
+        </div>
+    </div>
+
+
+        <div class="left-right">
+            <button class="left_arrow" onclick="slide(-1)"><img src="../math_img/arrow-left-5-svgrepo-com.svg" alt="Left Arrow"></button>
+            <button class="right_arrow" onclick="slide(1)"><img src="../math_img/right-arrow-svgrepo-com.svg" alt="Right Arrow"></button>
+        </div>
+
+        <div class="school_logos">
+            <h3>
+                Trusted by schools, Sydney-wide
+            </h3>
+            <img src="../math_img/Screenshot 2023-09-03 173019.png" alt="">
+        </div>
+
+    </section>
+
+    <section class="container">
+        <div class="special-testimony-container">
+            <div class="special-testimony-1">
+                <p>
+                    "Include legendary testimonial here about <br>
+                    Dylan's significant improvements with us. <br>
+                    Make sure to include quantitative data here <br>
+                    including BEFORE and AFTER and also the <br>
+                    TIME frame with which we helped him <br>
+                    improve."
+                </p>
+    
+                <h3>
+                    Insert Name
+                </h3>
+
+                <h4>
+                    School
+                </h4>
+    
+            </div>
+    
+            <div class="special-testimony-2">
+
+                <h3>
+                    A story of <br> success.
+                </h3>
+                
+                <br>
+                <br>
+                <br>
+                
+                <h3>
+                    1 of 100's.
+                </h3>
+    
+            </div>
+        </div>
+    </section>
+
+
+    <section class="form-container">
+        <div class="form-container-img">
+            <img src="../math_img/Screenshot 2023-09-03 184341.png" alt="">            
+        </div>
+
+        <div class="form-container-form">
+
+            <h2>
+                Book a Free Trial <br>
+                <span class="green-text">Try Us Risk Free!</span>
+            </h2>
+
+            <p>
+                We want to help you make an informed decision. Enjoy a <br>
+                trial lesson with workbook and homework provided - for free.
+            </p>
+            <form>
+                <input type="text" name="" id="" placeholder="Name">
+                <input type="text" name="" id="" placeholder="Mobile">
+                <input type="email" name="" id="" placeholder="Email">
+            </form>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </div>
+
+
+        <section class="faq">
+            <div class="faq_header">
+                <h2>
+                    Your Questions, Answered<span class="faq_green">.</span>
+                </h2>
+            </div>
+
+            <div class="faq_img">
+                <img src="../math_img/Screenshot 2023-09-03 220124.png" alt="">
+            </div>
+        
+            <div class="faq_img">
+            </div>
+        
+            <div class="faq-tab">
+                <input type="checkbox" class="faq-checkbox" id="faq1">
+                <label class="faq-label" for="faq1">Insert frequently asked question here</label>
+                <div class="faq-answer">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quis quas fugiat recusandae magni molestias tenetur dicta voluptates laborum assumenda, accusamus alias error? Voluptas, neque?</p>
+                </div>
+            </div>
+        
+            <div class="faq-tab">
+                <input type="checkbox" class="faq-checkbox" id="faq2">
+                <label class="faq-label" for="faq2">Insert frequently asked question here</label>
+                <div class="faq-answer">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quis quas fugiat recusandae magni molestias tenetur dicta voluptates laborum assumenda, accusamus alias error? Voluptas, neque?</p>
+                </div>
+            </div>
+        
+            <div class="faq-tab">
+                <input type="checkbox" class="faq-checkbox" id="faq3">
+                <label class="faq-label" for="faq3">Insert frequently asked question here</label>
+                <div class="faq-answer">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quis quas fugiat recusandae magni molestias tenetur dicta voluptates laborum assumenda, accusamus alias error? Voluptas, neque?</p>
+                </div>
+            </div>
+        
+            <div class="faq-tab">
+                <input type="checkbox" class="faq-checkbox" id="faq4">
+                <label class="faq-label" for="faq4">Insert frequently asked question here</label>
+                <div class="faq-answer">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quis quas fugiat recusandae magni molestias tenetur dicta voluptates laborum assumenda, accusamus alias error? Voluptas, neque?</p>
+                </div>
+            </div>
+        
+            <div class="faq-tab">
+                <input type="checkbox" class="faq-checkbox" id="faq5">
+                <label class="faq-label" for="faq5">Insert frequently asked question here</label>
+                <div class="faq-answer">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quis quas fugiat recusandae magni molestias tenetur dicta voluptates laborum assumenda, accusamus alias error? Voluptas, neque?</p>
+                </div>
+            </div>
+        
+            <div class="faq-tab">
+                <input type="checkbox" class="faq-checkbox" id="faq6">
+                <label class="faq-label" for="faq6">Insert frequently asked question here</label>
+                <div class="faq-answer">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quis quas fugiat recusandae magni molestias tenetur dicta voluptates laborum assumenda, accusamus alias error? Voluptas, neque?</p>
+                </div>
+            </div>
+        </section>   
+
+        <section class="summary">
+            <div class="summary_container">
+                <div id="about-us" class="about-us">
+                    <div class="about-us-img">
+                        <img src="../math_img/Asset 2.png" alt="">
+                    </div>
+
+                    <div class="about-us-info">
+                        <p>
+                            To some, mathematics is a mere <br>
+                            subject; for us at The <br>
+                            Mathologists, it's a canvas upon <br>
+                            which every student paints their <br>
+                            potential, and every struggle <br>
+                            transforms into a stroke of <br>
+                            brilliance. 
+                        </p>
+
+                        <p>
+                            We are Sydney's leading <br>
+                            mathematics educators for <br>
+                            students in Years 10-12. We <br>
+                            pioneer change.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="classes-info">
+                    <h3>
+                        We know maths!
+                    </h3>
+
+                    <p>
+                        Year 10 Maths 
+                    </p>
+
+                    <p> 
+                        Year 11 Math ADV
+                    </p>
+
+                    <p> 
+                        Year 11 Math EXT1
+                    </p>
+
+                    <p> 
+                        Year 12 Math ADV
+                    </p>
+
+                    <p> 
+                        Year 12 Math EXT1
+                    </p>
+
+                </div>
+
+                <div class="contacts">
+                    <h3>
+                        Contact
+                    </h3>
+                    <p>
+                        <a href="tel:0424788909">0424 788 909</a>
+                    </p>
+
+                    <p> admin@themathologists.com.au
+
+                    </p>
+
+                    <p>
+                        Level 3, Suite 2 <br>
+                        110 Church St, Parramatta 2150 <br>
+                        NSW, Australia
+                    </p>
+
+                </div>
+
+                <div class="opening-hours">
+
+                    <h3>
+                        Opening Hours
+                    </h3>
+                    <p>
+                        Mon - Fri <span class="space-left">3:00pm - 9:00pm</span>
+                    </p>
+
+                    <p>
+                        Sat - Sun <span class="space-left">9:00am - 8:00pm</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+        
+        <hr>
+        <footer>
+
+        <div class="footer">
+            <p>
+                © 2023 All Rights Reserved | The Mathologists 
+            </p>
+
+            <p class="middle"> 
+                <a href=""> Privacy policy</a>
+                <a href=""> Enrolment Terms & Conditions</a>
+            </p>
+
+        </div>
+
+        </footer>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Scroll effect for grade containers
+            let gradeContainers = document.querySelectorAll('.grade_container');
+    
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right >= 0 &&
+                    rect.bottom >= 0 &&
+                    rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+    
+            function checkVisibility() {
+                gradeContainers.forEach(container => {
+                    if (isInViewport(container)) {
+                        container.classList.add('in-view');
+                    }
+                });
+            }
+    
+            // Parallax effect for the hero image
+            let heroImage = document.querySelector('.hero_img img');
+    
+            function parallaxEffect() {
+                let scrolled = window.scrollY;
+                heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+    
+            window.addEventListener('scroll', function() {
+                checkVisibility();
+                parallaxEffect();
+            });
+    
+            checkVisibility();  // Initial check for grade containers visibility
+    
+            // Dark mode toggle feature
+            let darkModeStatus = JSON.parse(localStorage.getItem("darkModeStatus")) || false;
+    
+            function toggleDarkMode() {
+                document.body.classList.toggle("dark-mode");
+                darkModeStatus = !darkModeStatus;
+                localStorage.setItem("darkModeStatus", JSON.stringify(darkModeStatus));
+            }
+    
+            if (darkModeStatus) {
+                document.body.classList.add("dark-mode");
+            }
+    
+            document.getElementById("toggleDarkMode").addEventListener("click", toggleDarkMode);
+        });
+    
+        //Get the button
+        var mybutton = document.getElementById("backToTop");
+    
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction();
+        };
+    
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+    
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.onclick = function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            let animatedElements = document.querySelectorAll('.our-mathology .mathology-img, .our-mathology .mathology-txt');
+    
+            function isElementInViewport(el) {
+                let rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+    
+            function checkVisibility() {
+                animatedElements.forEach(function(element) {
+                    if (isElementInViewport(element)) {
+                        element.style.opacity = "1";
+                        element.style.transform = "translateY(0)"; // Reset to original position
+                    }
+                });
+            }
+    
+            // Initial check
+            checkVisibility();
+    
+            // Listen for scroll events
+            window.addEventListener('scroll', checkVisibility);
+        });
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to check if the element is in the viewport
+            function isInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right >= 0 &&
+                    rect.bottom >= 0 &&
+                    rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+    
+            const fadeElements = document.querySelectorAll('.scroll-fade-in');
+    
+            // Function to check each element on scroll
+            function checkFade() {
+                fadeElements.forEach(el => {
+                    if (isInViewport(el)) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+    
+            // Check on load in case some elements are already visible
+            checkFade();
+    
+            window.addEventListener('scroll', checkFade);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+    let fadeInElements = document.querySelectorAll('.fade-in');
+    
+    function isElementInViewport(el) {
+        let rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+
+        function checkFadeInVisibility() {
+            fadeInElements.forEach(function(element) {
+                if (isElementInViewport(element)) {
+                    element.style.opacity = "1";
+                }
+            });
+        }
+
+        // Initial check
+        checkFadeInVisibility();
+
+        // Listen for scroll events
+        window.addEventListener('scroll', checkFadeInVisibility);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let resourcesSection = document.querySelector('.resources');
+
+        let observer = new IntersectionObserver(function (entries) {
+            // If the section is in view (i.e., intersecting)
+            if (entries[0].isIntersecting) {
+                resourcesSection.style.opacity = '1';  // Make it fully visible
+            } else {
+                resourcesSection.style.opacity = '0';  // Hide it again when it's out of view
+            }
+        }, {
+            threshold: 0.1  // It triggers the callback when 10% of the element is visible
+        });
+
+        observer.observe(resourcesSection);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const greenLine = document.querySelector('.green-line');
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        const html = document.documentElement;
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || html.clientHeight) &&
+            rect.right <= (window.innerWidth || html.clientWidth)
+        );
+    }
+
+    function handleScroll() {
+        if (isInViewport(greenLine)) {
+            greenLine.style.width = '100%';
+            greenLine.style.left = '0';
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let imgsLeft = document.querySelectorAll(".img_1, .img_2");
+    let imgsRight = document.querySelectorAll(".img_3, .img_4");
+    
+    function isElementInViewport(el) {
+        let rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+
+    function checkVisibility() {
+        imgsLeft.forEach(img => {
+            if (isElementInViewport(img)) {
+                img.classList.add("visible");
+            }
+        });
+        
+        imgsRight.forEach(img => {
+            if (isElementInViewport(img)) {
+                img.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility(); // Call once at the start to handle case where image is already in view
+});
+
+// code for slider
+
+let currentSlide = 0;
+
+function slide(direction) {
+    const slider = document.querySelector('.testimonies-slider');
+    const slides = document.querySelectorAll('.testimony_tab');
+    
+    const slideWidth = slides[0].offsetWidth + parseInt(window.getComputedStyle(slides[0]).marginRight);
+    
+    currentSlide += direction;
+    
+    if (currentSlide < 0) {
+        currentSlide = 0;
+    }
+    
+    if (currentSlide > slides.length - 3) {
+        currentSlide = slides.length - 3;  /* Ensures you don't slide past the last set of testimonials */
+    }
+    
+    const move = currentSlide * slideWidth;
+    slider.style.transform = `translateX(-${move}px)`;
+}
+
+const slideWidth = slides[0].offsetWidth + parseInt(window.getComputedStyle(slides[0]).marginRight);
+
+
+    </script>
+    
+</body>
+</html>
